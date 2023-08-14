@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Modal } from "@/components/ui/modal";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 
 interface AlertModalProps{
@@ -33,7 +33,7 @@ loading
     return (
         <Modal 
         title="Are you sure?"
-        description="This action can not be undone"
+        description="This action can not be undone."
         isOpen={isOpen}
         onClose={onClose}
         >

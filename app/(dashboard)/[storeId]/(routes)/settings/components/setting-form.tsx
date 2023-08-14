@@ -1,6 +1,7 @@
 "use client";
 
 import { AlertModal } from "@/components/modals/alert-modals";
+import { ApiAlert } from "@/components/ui/api-alert";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -13,6 +14,7 @@ import {
 import Heading from "@/components/ui/heading";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Store } from "@prisma/client";
 import axios from "axios";
@@ -36,6 +38,7 @@ type SettingsFormValues = z.infer<typeof formSchema>;
 export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
   const params = useParams();
   const router = useRouter();
+  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -50,7 +53,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
       setLoading(true);
       await axios.patch(`/api/stores/${params.storeId}`, data);
       router.refresh();
-      toast.success("Store updated");
+      toast.success("Store is updated");
     } catch (error) {
       toast.error("something went wrong");
     } finally {
@@ -64,7 +67,7 @@ try {
     await axios.delete(`/api/stores/${params.storeId}`);
     router.refresh();
     router.push('/');
-    toast.success("Store is deleted")
+    toast.success("Store is deleted.")
 
 } catch (error) {
     toast.error("Make sure you removed all categories and products first")
@@ -122,6 +125,8 @@ setOpen(false);
           </Button>
         </form>
       </Form>
+      <Separator />
+      <ApiAlert title='NEXT_PUBLIC_API_URL' description={`${origin}/api/${params.storeId}`} variant="public" />
     </>
   );
 };

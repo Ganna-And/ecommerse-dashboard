@@ -3,12 +3,11 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 
-export async function PATCH(req : Request, {params}: {
+export async function PATCH(req : Request, { params }: {
     params:{ storeId: string }
 }) {
     
     try {
-
         const {userId} = auth();
         const body= await req.json();
         
@@ -17,7 +16,6 @@ export async function PATCH(req : Request, {params}: {
 if(!userId){
     return new NextResponse('Unauthorized', {status: 401})
 }
-
 
 if(!name){
     return new NextResponse('Name is required', {status: 400})
@@ -35,7 +33,7 @@ const store = await prismadb.store.updateMany({
     data: {
         name
     }
-})
+});
 
 return NextResponse.json(store)
     } catch (error) {
@@ -50,10 +48,7 @@ export async function DELETE(req : Request, {params}: {
 }) {
     
     try {
-
         const {userId} = auth();
-      
-
 if(!userId){
     return new NextResponse('Unauthorized', {status: 401})
 }
