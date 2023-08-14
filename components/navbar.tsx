@@ -9,7 +9,7 @@ export default async function Navbar() {
     const {userId} = auth();
 
     if(!userId){
-        redirect('/')
+        redirect('/sign-in')
     }
 
     const stores = await prismadb.store.findMany({
