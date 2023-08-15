@@ -5,10 +5,16 @@ import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
 import { Plus } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
+import { BillboardColumn, columns } from "./columns";
+import { DataTable } from "@/components/ui/data-table";
 
-
-
-export const BillboardClient =()=>{
+interface BillboardClientProps{
+    data: BillboardColumn[]
+}
+ 
+export const BillboardClient:React.FC<BillboardClientProps> =({
+data
+})=>{
 
     const router = useRouter();
     const params = useParams();
@@ -18,7 +24,7 @@ export const BillboardClient =()=>{
         <>
         <div>
           <Heading
-          title="Billboards(0)"
+          title={`Billboards(${data.length})`}
           description="Manage billboards for your store"
            />
            <Button onClick={()=> router.push(`/${params.storeId}/billboards/new`)}>
@@ -27,6 +33,7 @@ export const BillboardClient =()=>{
            </Button>
             </div>
             <Separator />
+            <DataTable searchKey="label" columns={columns} data={data} />
             </>
     )
 }
