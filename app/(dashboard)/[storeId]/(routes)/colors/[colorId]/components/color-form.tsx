@@ -44,9 +44,9 @@ export const ColorForm: React.FC<ColorFormProps> = ({ initialData }) => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const title = initialData ? 'Edit size' : 'Create size';
-  const description = initialData ? 'Edit size' : 'Add new size';
-  const toastMessage = initialData ? 'Size is updated' : 'Size is created';
+  const title = initialData ? 'Edit color' : 'Create color';
+  const description = initialData ? 'Edit color' : 'Add new color';
+  const toastMessage = initialData ? 'Color is updated' : 'Color is created';
   const action = initialData ? 'Save changes' : 'Create ';
   
 
@@ -106,7 +106,7 @@ setOpen(false);
          (<Button
           disabled={loading}
           variant="destructive"
-          size="icon"
+          color="icon"
           onClick={() => setOpen(true)}
         >
           <Trash className="h-4 w-4" />

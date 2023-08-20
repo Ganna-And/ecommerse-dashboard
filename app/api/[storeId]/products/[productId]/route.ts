@@ -3,7 +3,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 
-export async function GET(req : Request, {params}: {
+export async function GET(req: Request, {params}: {
     params:{ productId: string  }
 }) {
     

@@ -114,7 +114,7 @@ const products = await prismadb.product.findMany({
         categoryId,
         sizeId,
         colorId,
-        isFeatured: isFeatured ? true : false,
+        isFeatured: isFeatured ? true : undefined,
         isArchived: false
     },
     include:{
@@ -131,7 +131,7 @@ const products = await prismadb.product.findMany({
 
 return NextResponse.json(products)
     } catch (error) {
-        console.log('[BILLBOARDS_GET]', error);
+        console.log('[PRODUCTS_GET]', error);
         return new NextResponse("Internal error", {status: 500});
     }
 };

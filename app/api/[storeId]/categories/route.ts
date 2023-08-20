@@ -61,20 +61,20 @@ export async function POST(req:Request, { params }:{
 }
 
 export async function GET(req:Response, { params }:{
-    params: { categoryId: string }
+    params: { storeId: string }
 }) {
     try {
-if(!params.categoryId){
-    return new NextResponse("Category id is required", { status: 400})
+if(!params.storeId){
+    return new NextResponse("Store id is required", { status: 400})
 }
 
-const category = await prismadb.category.findUnique({
+const categories = await prismadb.category.findMany({
     where:{
-        id: params.categoryId
+        storeId: params.storeId
     }
 });
 
-return NextResponse.json(category)
+return NextResponse.json(categories)
     } catch (error) {
         console.log('[CATEGORIES_GET]', error);
         return new NextResponse("Internal error", {status: 500});

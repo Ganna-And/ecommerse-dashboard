@@ -15,6 +15,9 @@ if(!params.categoryId){
     const category = await prismadb.category.findUnique({
         where: {
             id: params.categoryId,           
+        },
+        include:{
+            billboard:true
         }
     });
 
@@ -27,7 +30,7 @@ return NextResponse.json(category)
 }
 
 export async function DELETE(req : Request, {params}: {
-    params:{ storeId: string, categoryId: string  }
+    params:{ categoryId: string, storeId: string  }
 }) {
     
     try {
@@ -107,7 +110,7 @@ return new NextResponse("Unauthorized", {status: 403})
 }
 
 
-const category = await prismadb.category.updateMany({
+const category = await prismadb.category.update({
     where: {
         id: params.categoryId, 
     },
