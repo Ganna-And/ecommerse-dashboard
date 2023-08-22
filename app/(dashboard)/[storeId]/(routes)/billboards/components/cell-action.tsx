@@ -61,25 +61,25 @@ export const CellAction:React.FC<CellActionProps>=({
  <Button
  variant='ghost'
  className="h-8 w-8 p-0">
-    <span className="sr-only">open menu</span>
+    <span className="sr-only">Open menu</span>
     <MoreHorizontal className="h-4 w-4"/>
  </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent align="end">
-        <DropdownMenuLabel>
+        <DropdownMenuLabel className="font-semibold text-center mb-2">
             Actions
         </DropdownMenuLabel>
-        <DropdownMenuItem onClick={()=>router.push(`/${params.storeId}/billboards/${data.id}`)}>
-            <Edit className="h-4 w-4 mr-2"/>
-            Update
+        <DropdownMenuItem className='flex  items-center ml-2 cursor-pointer' onClick={()=>router.push(`/${params.storeId}/billboards/${data.id}`)}>
+             Update
+             <Edit className="h-4 w-4 ml-3"/>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={()=> onCopy(data.id)}>
-            <Copy className="h-4 w-4 mr-2" />
-            Copy id
+        <DropdownMenuItem className='flex  items-center ml-2 cursor-pointer' onClick={()=> onCopy(data.id)}>
+            Copy id 
+            <Copy className="ml-3 h-4 w-4" />
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={()=>setOpen(true)}>
-            <Trash className="h-4 w-4 mr-2"/>
-            Delete
+        <DropdownMenuItem className='flex  items-center ml-2 cursor-pointer' onClick={()=>setOpen(true)}>
+              Delete
+              <Trash className="h-4 w-4 ml-5"/>
         </DropdownMenuItem>
     </DropdownMenuContent>
    </DropdownMenu>
