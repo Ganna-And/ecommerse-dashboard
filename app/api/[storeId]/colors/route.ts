@@ -60,7 +60,7 @@ export async function POST(req:Request, { params }:{
     }
 }
 
-export async function GET(req:Response, { params }:{
+export async function GET(req:Request, { params }:{
     params: { storeId: string }
 }) {
     try {
