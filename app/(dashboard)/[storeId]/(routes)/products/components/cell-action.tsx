@@ -70,7 +70,7 @@ export const CellAction:React.FC<CellActionProps>=({
     <DropdownMenuLabel className="font-semibold text-center mb-2">
             Actions
         </DropdownMenuLabel>
-        <DropdownMenuItem className='flex  items-center ml-2 cursor-pointer' onClick={()=>router.push(`/${params.storeId}/billboards/${data.id}`)}>
+        <DropdownMenuItem className='flex  items-center ml-2 cursor-pointer' onClick={()=>router.push(`/${params.storeId}/products/${data.id}`)}>
              Update
              <Edit className="h-4 w-4 ml-3"/>
         </DropdownMenuItem>
