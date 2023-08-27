@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecommerce Admin & Store
 
-## Getting Started
+Welcome to the Ecommerce Admin & Store project repository! This project is an E-commerce admin dashboard that allows easy management of vendors and stores. You can control categories, products, filters, images, and billboards effortlessly. The project includes Clerk Authentication and Stripe integration for payments.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Description](#description)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- - [Browse Multiple Stores](#browse-multiple-stores)
+  - [Customize Products](#customize-products)
+  - [Track Orders and Insights](#track-orders-and-insights)
+- [Links](#links)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Description
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Ecommerce Admin & Store project provides an admin dashboard for efficient management of vendors and stores. It supports features such as managing categories, products, filters, images, and billboards. Additionally, the project incorporates Clerk Authentication for secure access and Stripe integration to enable seamless payment processing.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies Used
 
-## Learn More
+- React
+- Next.js
+- Typescript
+- Tailwind CSS + Shadcn UI
+- Prisma + PlanetScale (Database)
+- Clerk Authentication
+- Stripe
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Browse Multiple Stores
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Access and manage multiple stores from a single dashboard.
+- Efficiently organize and update store information.
 
-## Deploy on Vercel
+### Customize Products
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Offer products with various sizes, colors, and filters.
+- Easily update and customize product details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Track Orders and Insights
+
+- Track and manage customer orders.
+- Gain insights into sales data to make informed business decisions.
+
+## Links
+
+- [Ecommerce Admin & Store Repository](https://github.com/Ganna-And/ecommerse-dashboard.git)
+- [Live Ecommerce Admin & Store Demo](https://ecommerse-dashboard.vercel.app)
+- [Ecommerce Store Repository](https://github.com/Ganna-And/ecommerce-store.git)
+- [Live Ecommerce Store Demo](https://ecommerce-store-tau-blue.vercel.app)
+
+Feel free to explore the repository, test the live demos, and use the project as a reference or inspiration for your own projects.
+
